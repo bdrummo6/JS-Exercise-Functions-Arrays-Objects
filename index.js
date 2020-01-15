@@ -145,11 +145,11 @@ function get3rdCar(inventory) {
  * it will return `This is a Lincoln Navigator`.
 */
 function getCarInfoByIndex(inventory, index1) {
-    const car = inventory.find((item, index) => {
+    const indexCar = inventory.find((item, index) => {
     return index === index1 
-  })
+  });
    
-   return `The is a ${car.car_make} ${car.car_model}`
+   return `This is a ${indexCar.car_make} ${indexCar.car_model}`
 }
 
 /**
@@ -164,11 +164,11 @@ function getCarInfoByIndex(inventory, index1) {
  * it will return `This is a Lincoln Town Car`.
 */
 function getLastCarInfo(inventory) {
-    const car = inventory.find((item, index) => {
+    const lastCar = inventory.find((item, index) => {
     return index === (inventory.length-1) 
-  })
+  });
    
-   return `The is a ${car.car_make} ${car.car_model}`
+   return `This is a ${lastCar.car_make} ${lastCar.car_model}`
 }
 
 /**
@@ -186,7 +186,7 @@ function getLastCarInfo(inventory) {
 function getCarInfoById(inventory, id1) {
     for(let i = 0; i < inventory.length; i++) {
         if(inventory[i].id === id1) {
-            return "The is a " + inventory[i].car_make + " " + inventory[i].car_model + ".";
+            return "This is a " + inventory[i].car_make + " " + inventory[i].car_model + ".";
         }
     }
 }
