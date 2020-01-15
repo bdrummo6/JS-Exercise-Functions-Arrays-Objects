@@ -301,7 +301,9 @@ const addFive = (num) => {
     return num + 5;
 }
 
-const argTimesTwo = null; // code here!
+const argTimesTwo = (num) => {
+    return num * 2;
+}
 
 /**
  * ### Challenge `carMaker`
