@@ -144,9 +144,9 @@ function get3rdCar(inventory) {
  * For example, if getCarInfoByIndex is invoked with the inventory and the number 0,
  * it will return `This is a Lincoln Navigator`.
 */
-function getCarInfoByIndex(inventory, index) {
+function getCarInfoByIndex(inventory, index1) {
     const car = inventory.find((item, index) => {
-    return index === index 
+    return index === index1 
   })
    
    return `The is a ${car.car_make} ${car.car_model}`
@@ -200,9 +200,13 @@ function getCarInfoById(inventory, id) {
  *     (1) an array which is an inventory of cars like the one inside /data/inventory.js.
  * sortCarInventory returns an inventory that is sorted by car_model, ascending [A-Z].
 */
-function sortCarInventory(/* code here */) {
-  /* code here */
+function sortCarInventory(inventory) {
+    for(let i = 0; i < inventory.length; i++) {
+        inventory.sort((a, b) => a.car_model.localeCompare(b.car_model));
+    }
+    return inventory;
 }
+
 
 /**
  * ### Challenge `getModelYears`
@@ -213,9 +217,14 @@ function sortCarInventory(/* code here */) {
  *     (1) an array which is an inventory of cars like the one inside /data/inventory.js.
  * getModelYears returns an array containing all the 'car_year's in the inventory.
 */
-function getModelYears(/* code here */) {
-  /* code here */
+function getModelYears(inventory) {
+    let car_years = [];
+    for(let i = 0; i < inventory.length; i++) {
+        car_years[i] = inventory[i].car_year;
+    }
+    return car_years;
 }
+
 
 /**
  * ### Challenge `getOlderCars`
@@ -229,8 +238,14 @@ function getModelYears(/* code here */) {
  * with a `car_year` which is at most the given desired max year,
  * in the same order as they appear in the original inventory.
 */
-function getOlderCars(/* code here */) {
-  /* code here */
+function getOlderCars(inventory, max_year) {
+    let older_cars = [];
+    for(let i = 0; i < inventory.length; i++) {
+        if (inventory[i].car_year <= max_year) {
+            older_cars[i] = inventory[i];
+        }
+    }
+    return older_cars;
 }
 
 /**
