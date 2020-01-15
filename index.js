@@ -81,7 +81,7 @@ function makeSmartPerson(name) {
   return {
 	name: name,
 	sum: function(num1, num2) {
-		 return num1 + num2;
+			return num1 + num2;
 		 },
 	speak: function() {
 			return "Hello, my name is " + name;
@@ -183,14 +183,14 @@ function getLastCarInfo(inventory) {
  * For example, if getCarInfoById is invoked with the inventory and the number 1,
  * it will return `This is a Lincoln Navigator`.
 */
-function getCarInfoById(inventory, id) {
-    const car = inventory.find((item, id) => {
-    return id === id
-  })
-  
-  return `The is a ${car.car_make} ${car.car_model}`
-  
+function getCarInfoById(inventory, id1) {
+    for(let i = 0; i < inventory.length; i++) {
+        if(inventory[i].id === id1) {
+            return "The is a " + inventory[i].car_make + " " + inventory[i].car_model + ".";
+        }
+    }
 }
+
 
 /**
  * ### Challenge `sortCarInventory`
